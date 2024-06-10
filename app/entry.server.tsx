@@ -15,7 +15,10 @@ import { server as mswServer } from "./mocks/node";
 
 const ABORT_DELAY = 5_000;
 
-if (process.env.NODE_ENV === "development") {
+if (
+  process.env.NODE_ENV === "development" ||
+  process.env.NODE_ENV === "production"
+) {
   mswServer.listen();
 }
 
